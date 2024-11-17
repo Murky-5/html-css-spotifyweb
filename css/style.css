@@ -23,11 +23,15 @@
 .pointer {
     cursor: pointer;
 }
+
+.full {
+    width: 100%;
+}
 /* BODY */
 
 #b-body {
     display: flex;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 80px);
 }
 
 
@@ -164,10 +168,117 @@ footer {
     position: sticky;
     left: 0;
     bottom: 0;
-    height: 100px;
+    height: 80px;
     width: 100%;
     background-color: aqua;
 }
+
+#footer {
+    justify-content: space-between;
+}
+
+#footer *:not(.actions > i) {
+    font-size: 0.9em;
+}
+
+#footer > * {
+    display: flex;
+}
+
+#footer > * > {
+    display: flex;
+    margin: 10px;
+}
+
+#footer > * > * {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#footer > .recup_song {
+    width: 245px;
+    padding: 20px 10px;
+}
+
+#footer > .recup_song > .cover {
+    padding: 0 10px;
+    width: 10%;
+    min-width: 60px;
+}
+
+#footer > .recup_song > .cover > img {
+    width: 100%;
+}
+
+#footer > .recup_song >.piece > div > strong > #song_title {
+    line-height: 0px;
+    font-size: 1.2em;
+}
+
+#footer > .recup_song > .add {
+    padding: 0 10px;
+}
+
+#footer > .recup_song > .add > i {
+    padding: 0px 7px;
+}
+
+#footer > .player {
+    flex-direction: column;
+    width: 500px;
+}
+
+#footer > .player > div {
+    
+}
+
+#footer > .player > .actions > i {
+    height: 51px;
+    display: flex;
+    align-items: center;
+}
+
+#footer > .player > div > i:nth-child(3) {
+    padding: 0 10px;
+}
+
+#footer > .player > .actions {
+    margin: 0 auto;
+    width: 200px;
+    height: fit-content;
+    justify-content: space-between;
+}
+
+#footer > .player > .navthru {
+    flex-wrap: nowrap;
+}
+
+#footer > .player > .navthru > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+hr {
+    border-radius: 5px;
+    border: 2px solid;
+    margin: 0 15px;
+}
+
+#footer > .connettivity > .list_devices_volume {
+    width: 100px;
+    padding-left: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#footer > .connettivity > .volume_bar {
+    width: 100px;
+}
+
+
+
 
 /* COLORS */
 
@@ -192,6 +303,9 @@ footer {
     background-color: rgba(red, green, blue, alpha); /* HA LA TRASPARENZA (alpha) */
 }
 
+#footer > .player > .navthru > hr {
+    border-color: grey;
+}
 
 @media screen and ( min-width: 638px ) { 
     #navbar {
@@ -219,6 +333,9 @@ footer {
     }
     .column_bottom * {
         display: flex;
+    }
+    #footer > .connettivity > .volume_bar {
+        width: 130px;
     }
 }
 
