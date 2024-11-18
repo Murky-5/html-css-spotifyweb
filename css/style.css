@@ -168,6 +168,10 @@ main {
     overflow-y: scroll;
 }
 
+#main > h1 {
+    font-size: 2em;
+}
+
 .stiky_top {
     position: sticky;
     left: 0;
@@ -203,14 +207,10 @@ main {
 }
 
 .type > ol > li > hr {
-    margin: 0 auto;
+    margin: 3px auto;
     border-radius: 0%;
     border: 1px solid;
     width: 40px;
-}
-
-#main > h1 {
-    font-size: 2em;
 }
 
 .playlists {
@@ -219,7 +219,7 @@ main {
 
 .playlists > .card,
 #main > h1,
-#main > h6 {
+#main > h4 {
     width: 50%;
     min-width: 50%;
     padding: 0 10px;
@@ -227,7 +227,7 @@ main {
 }
 
 #main > h1,
-#main > h6 {
+#main > h4 {
     margin: 20px 0;
 }
 
@@ -246,17 +246,19 @@ main {
     width: 100%;
 }
 
+.playlists > .card > ol > li > img:hover {
+    opacity: 40%;
+}
+
+.playlists > .card > ol > li:nth-child(2) {
+    font-size: 1.5em;
+}
+
 .playlists > .artist > ol > li {
     border: 1px solid transparent;
     border-radius: 100%;
     overflow: hidden;
 }
-
-.playlists > .card > ol > li > img:hover {
-    opacity: 40%;
-}
-
-
 
 /* FOOTER */
 
@@ -266,7 +268,6 @@ footer {
     bottom: 0;
     height: 80px;
     width: 100%;
-    background-color: aqua;
 }
 
 #footer {
@@ -347,10 +348,11 @@ footer {
 }
 
 #footer > .player > .navthru {
+    position: relative;
     flex-wrap: nowrap;
 }
 
-#footer > .player > .navthru > * {
+#footer > .player > .navthru > *:not(.hover) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -361,6 +363,34 @@ hr {
     border: 2px solid;
     margin: 0 15px;
 }
+
+#footer > .player > .navthru > div:not(.hover) {
+    position: relative;
+}
+
+.hover {
+    width: 20%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+div.navthru:hover > .hover {
+    display: block;
+}
+
+div.hover {
+    display: none;
+    width: 10px;
+    padding: 5px;
+    position: absolute;
+    top: 1px;
+    left: 25%;
+    border-radius: 100%;
+    border: 1px solid transparent;
+}
+
+
 
 #footer > .connettivity > .list_devices_volume {
     width: 100px;
@@ -381,21 +411,21 @@ hr {
 }
 
 #navbar {
-    border-color: gray;
-    color: gray;
+    border-color: grey;
+    color: grey;
 }
 
 .column_middle > div > button {
-    background-color: gray;
+    background-color: grey;
 }
 .header * button,
 .column_bottom > div > #profile_pic {
-    background-color: gray;
+    background-color: grey;
 }
 
-main {
+main:not(button) {
     background-color: #141922;
-    color: #FFF;
+    color: grey;
 }
 
 .stiky_top {
@@ -412,16 +442,34 @@ main {
     background-color: #000;
 }
 
+.playlists > .card > ol > li:nth-child(2) {
+    color: #FFF;
+}
+
 .type > ol > li > hr {
     border-color: #ADFF2F;
 }
 
 footer {
-    background-color: rgba(red, green, blue, alpha); /* HA LA TRASPARENZA (alpha) */
+    background-color: rgba( 28, 28, 28, 10); /* HA LA TRASPARENZA (alpha) */
+    color: #FFF;
+}
+
+footer hr {
+    color: grey;
+}
+
+#footer > .recup_song {
+    color: grey;
 }
 
 #footer > .player > .navthru > hr {
     border-color: grey;
+}
+
+hr.hover, div.hover {
+    border-color: #C1C1C1;
+    background-color: #C1C1C1;
 }
 
 @media screen and ( min-width: 638px ) { 
