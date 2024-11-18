@@ -162,6 +162,102 @@ span {
 
 /* MAIN */
 
+main {
+    font-size: 0.7em;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.stiky_top {
+    position: sticky;
+    left: 0;
+    top: 0;
+    height: 80px;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.stiky_top > button {
+    border: 1px solid;
+    border-radius: 30px;
+    padding: 10px 30px;
+    margin-right: 5px;
+}
+
+.type {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.type > ol {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.type > ol > li {
+    padding: 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.type > ol > li > hr {
+    margin: 0 auto;
+    border-radius: 0%;
+    border: 1px solid;
+    width: 40px;
+}
+
+#main > h1 {
+    font-size: 2em;
+}
+
+.playlists {
+    flex-wrap: wrap;
+}
+
+.playlists > .card,
+#main > h1,
+#main > h6 {
+    width: 50%;
+    min-width: 50%;
+    padding: 0 10px;
+    flex-wrap: wrap;
+}
+
+#main > h1,
+#main > h6 {
+    margin: 20px 0;
+}
+
+.playlists > .card > ol {
+    display: flex;
+    flex-direction: column;
+}
+
+.playlists > .card > ol > li {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.playlists > .card > ol > li > img {
+    display: flex;
+    width: 100%;
+}
+
+.playlists > .artist > ol > li {
+    border: 1px solid transparent;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.playlists > .card > ol > li > img:hover {
+    opacity: 40%;
+}
+
+
+
 /* FOOTER */
 
 footer {
@@ -278,8 +374,6 @@ hr {
 }
 
 
-
-
 /* COLORS */
 
 .white {
@@ -297,6 +391,29 @@ hr {
 .header * button,
 .column_bottom > div > #profile_pic {
     background-color: gray;
+}
+
+main {
+    background-color: #141922;
+    color: #FFF;
+}
+
+.stiky_top {
+    background-color: #080B12;
+}
+
+.stiky_top > button {
+    background-color: transparent;
+    border-color: #FFF;
+    color: #FFF;
+}
+
+.playlists > .card > ol > li:first-child {
+    background-color: #000;
+}
+
+.type > ol > li > hr {
+    border-color: #ADFF2F;
 }
 
 footer {
@@ -333,6 +450,10 @@ footer {
     }
     .column_bottom * {
         display: flex;
+    }
+    .playlists > .card {
+        width: 200px;
+        min-width: 200px;
     }
     #footer > .connettivity > .volume_bar {
         width: 130px;
