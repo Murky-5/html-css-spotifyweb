@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    scrollbar-width: none;
 }
 
 /* SHARED */
@@ -13,7 +14,7 @@
 }
 
 .padding {
-    padding: 10px 6px;
+    padding: 10px 7px;
 }
 
 .margin-top {
@@ -27,11 +28,19 @@
 .full {
     width: 100%;
 }
+
+.c_hover {
+    color: #FFF;
+}
+
 /* BODY */
 
 #b-body {
     display: flex;
     height: calc(100vh - 80px);
+    font-family: "Roboto", serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 
@@ -39,14 +48,13 @@
 
 #navbar {
     font-size: 0.7em;
-    background-color: black;
     height: 100%;
     width: 30px;
     flex-direction: column;
     overflow-y: scroll;
 }
 
-#navbar i {
+#navbar i:not(.fa-sm) {
     font-size: initial;
 }
 
@@ -65,7 +73,7 @@
 #navbar > img:nth-child(2) {
     display: none;
     margin: 6px 0 0 6px; 
-    width: 90%;
+    width: 70%;
 }
 
 .nav_middle {
@@ -77,7 +85,6 @@
     height: 140px;
     width: 100%;
 }
-
 
 .column_top > ol > li {
     text-align: center;
@@ -130,12 +137,9 @@ span {
     flex-direction: column;
 }
 
-.column_bottom * {
-    display: none;
-}
-
 .column_bottom p,
-.column_bottom h6  {
+.column_bottom > .profile > h6  {
+    display: none;
     padding-left: 5px;
 }
 
@@ -143,6 +147,7 @@ span {
     padding-bottom: 10px;
     border-bottom: 1px solid;
 }
+
 
 .column_bottom > .profile * , .app * {
     align-items: center;
@@ -152,6 +157,7 @@ span {
 .column_bottom > .profile {
     padding-top: 10px;
 }
+
 .column_bottom > .profile > #profile_pic {
     overflow: hidden;
     height: 16px;
@@ -173,6 +179,7 @@ main {
 }
 
 .stiky_top {
+    z-index: 1;
     position: sticky;
     left: 0;
     top: 0;
@@ -189,18 +196,24 @@ main {
     margin-right: 5px;
 }
 
+.stiky_top > button:hover {
+    font-size: 1.40em;
+}
+
 .type {
     margin: 0 auto;
     padding: 20px;
 }
 
 .type > ol {
+    padding: 0 90px;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .type > ol > li {
     padding: 0 10px;
+    padding-bottom: 20px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -210,7 +223,7 @@ main {
     margin: 3px auto;
     border-radius: 0%;
     border: 1px solid;
-    width: 40px;
+    width: 30px;
 }
 
 .playlists {
@@ -237,8 +250,18 @@ main {
 }
 
 .playlists > .card > ol > li {
+    position: relative;
     margin-top: 10px;
     text-align: center;
+}
+
+.playlists > .card > ol > li > i {
+    font-size: 50px;
+    display: none;
+    position: absolute;
+    top: calc(50% - 1px);
+    left: calc(50% - 21px);
+    opacity: 100%;
 }
 
 .playlists > .card > ol > li > img {
@@ -246,9 +269,16 @@ main {
     width: 100%;
 }
 
-.playlists > .card > ol > li > img:hover {
+.playlists > .card > ol > li:hover > i {
+    cursor: pointer;
+    display: block;
+}
+
+.playlists > .card > ol > li:hover > img  {
+    cursor: pointer;
     opacity: 40%;
 }
+
 
 .playlists > .card > ol > li:nth-child(2) {
     font-size: 1.5em;
@@ -326,11 +356,8 @@ footer {
     width: 500px;
 }
 
-#footer > .player > div {
-    
-}
-
 #footer > .player > .actions > i {
+    cursor: pointer;
     height: 51px;
     display: flex;
     align-items: center;
@@ -338,6 +365,11 @@ footer {
 
 #footer > .player > div > i:nth-child(3) {
     padding: 0 10px;
+}
+
+#footer > .player > div > i:nth-child(3):hover {
+    padding: 0 7px;
+    font-size: 2.5em;
 }
 
 #footer > .player > .actions {
@@ -385,22 +417,54 @@ div.hover {
     padding: 5px;
     position: absolute;
     top: 1px;
-    left: 25%;
+    left: 30%;
     border-radius: 100%;
     border: 1px solid transparent;
 }
 
-
+#footer > .connettivity {
+    position: relative;
+}
 
 #footer > .connettivity > .list_devices_volume {
-    width: 100px;
+    width: 100%;
+    max-width: 43%;
+    min-width: 70px;
     padding-left: 20px;
     justify-content: space-between;
     align-items: center;
 }
 
+#footer > .connettivity > .list_devices_volume > i:hover {
+    cursor: pointer;
+}
+
 #footer > .connettivity > .volume_bar {
+    position: relative;
     width: 100px;
+}
+
+#footer > .connettivity > .volume_bar > hr:hover {
+    cursor: pointer;
+}
+
+#footer > .connettivity > .volume_bar > hr:nth-child(2) {
+    top: 48%;
+}
+
+#footer > .connettivity > .hover {
+    top: 43%;
+    left: 60%;
+    display: none;
+}
+
+#footer > .connettivity > .volume_bar:hover + .hover {
+    display: block;
+}
+
+#footer > .connettivity > .hover:hover {
+    cursor: pointer;
+    display: block;
 }
 
 
@@ -411,6 +475,7 @@ div.hover {
 }
 
 #navbar {
+    background-color: #000;
     border-color: grey;
     color: grey;
 }
@@ -472,9 +537,74 @@ hr.hover, div.hover {
     background-color: #C1C1C1;
 }
 
-@media screen and ( min-width: 638px ) { 
+/* COLORS/DECORATIONS - HOVER */
+
+#navbar > .nav_middle > .column_top > ol > li:hover {
+    cursor: pointer;
+    color: #FFF;
+}
+
+#navbar > .nav_middle > .column_middle > ol > li:hover {
+    cursor: pointer;
+    color: #FFF;
+}
+
+#navbar > .nav_middle > .column_middle > .margin-top:hover > *:not(button) {
+    cursor: pointer;
+    color: #FFF;
+}
+
+#navbar > .nav_middle > .column_middle > .margin-top > button:hover {
+    cursor: pointer;
+    background-color: #FFF;
+}
+
+#navbar > .column_bottom > .app > p:hover { 
+    cursor: pointer;
+    color: #FFF;
+}
+
+#main > .type > ol > li:hover {
+    cursor: pointer;
+    color: #FFF;
+}
+
+#main > .playlists > .card > ol > li:first-child {
+    color: #FFF;
+}
+
+#footer > .recup_song > .piece > div > strong:hover > :not(#song_title) {
+    cursor: pointer;
+    color: #FFF;
+    text-decoration: underline;
+}
+
+#footer > .recup_song > .piece > div > strong > i:hover {
+    cursor: pointer;
+    color: #FFF;
+}
+
+#footer > .recup_song > .add > i:hover {
+    cursor: pointer;
+    color: #FFF;
+}
+
+footer hr:hover,
+footer div.hover:hover {
+    cursor: pointer;
+}
+
+footer hr:nth-child(2):hover {
+    cursor: pointer;
+    border-color: #ADFF2F;
+}
+
+
+
+
+@media screen and ( min-width: 552px ) {
     #navbar {
-        width: 120px;
+        width: 200px;
     }
     #navbar > img:first-child {
         display: none;
@@ -491,7 +621,7 @@ hr.hover, div.hover {
         display: inline-block;
     }
     .column_top > ol > li:first-child {
-        border-color: aquamarine;
+        border-color: #ADFF2F;
     }
     .column_middle {
         display: flex;
@@ -499,17 +629,49 @@ hr.hover, div.hover {
     .column_bottom * {
         display: flex;
     }
+    .column_bottom p,
+    .column_bottom > .profile > h6 {
+        display: flex;
+    }
+    .type > ol {
+        padding: 0;
+    }
+    .playlists > .card {
+        width: 50%;
+        min-width: 50%;
+    }
+    div.hover {
+        left: 28%;
+    }
+    #footer > .connettivity > .volume_bar {
+        width: 110px;
+    }
+    #footer > .connettivity > .hover {
+        left: 60%;
+    }
+}
+
+@media screen and ( min-width: 639px ) {
     .playlists > .card {
         width: 200px;
         min-width: 200px;
+    }
+    div.hover {
+        left: 26%;
+    }
+    #footer > .connettivity > .hover {
+        left: 60%;
+    }
+}
+
+@media screen and ( min-width: 878px ) {
+    div.hover {
+        left: 24%;
     }
     #footer > .connettivity > .volume_bar {
         width: 130px;
     }
 }
-
-
-
 
 
 
